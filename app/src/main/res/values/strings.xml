@@ -16,4 +16,5 @@
     <string name="deleteContact">Are you sure, you want to delete it.</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
+    <string name="birthday">Birthday</string>
 </resources>
