@@ -4,7 +4,6 @@ package com.example.bilal.mappe2;
  * Created by bilal on 10/16/2015.
  */
 
-
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -53,6 +52,7 @@ public class DisplayContact extends Activity {
                 String nam = rs.getString(rs.getColumnIndex(DBHelper.CONTACTS_COLUMN_NAME));
                 String phon = rs.getString(rs.getColumnIndex(DBHelper.CONTACTS_COLUMN_PHONE));
                 String birthda = rs.getString(rs.getColumnIndex(DBHelper.CONTACTS_COLUMN_BIRTHDAY));
+
 
                 if (!rs.isClosed())
                 {
@@ -104,6 +104,7 @@ public class DisplayContact extends Activity {
             case R.id.Edit_Contact:
                 Button b = (Button)findViewById(R.id.button1);
                 b.setVisibility(View.VISIBLE);
+
                 name.setEnabled(true);
                 name.setFocusableInTouchMode(true);
                 name.setClickable(true);
@@ -115,6 +116,7 @@ public class DisplayContact extends Activity {
                 birthday.setEnabled(true);
                 birthday.setFocusableInTouchMode(true);
                 birthday.setClickable(true);
+
 
                 return true;
             case R.id.Delete_Contact:
