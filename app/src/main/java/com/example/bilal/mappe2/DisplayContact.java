@@ -93,7 +93,6 @@ public class DisplayContact extends Activity {
                 getMenuInflater().inflate(R.menu.menu_main, menu);
             }
         }
-        //hei bilal
         return true;
     }
 
