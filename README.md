@@ -6,12 +6,13 @@
 <p>Spørre om landscape</p>
 <hr>
 
-<p>Lag Sql lite database</p>
-<p>Koble til database</p>
-<p>Lage felter for søke/redigere/se</p>
+<p>Lag Sql lite database-<strong>X</strong></p> 
+<p>Koble til database-<strong>X</strong></p>
+<p>Lage felter for søke/redigere/se-<strong>X</strong></p>
 <p>Lage sms greia</p>
 <p>Dokumentasjon(Husk begrunnelse for design- og navigasjonsvalg)</p>
 <p>Input validering</p>
+<p>Datepicker ting på bursdag</p>
 
 <p><strong>Småting:</strong></p>
 <p>Landscape</p>
