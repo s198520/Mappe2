@@ -17,13 +17,12 @@
             android:id="@+id/editTextName"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
             android:layout_marginTop="5dp"
-            android:layout_marginLeft="10dp"
             android:layout_marginBottom="15dp"
             android:ems="10"
             android:inputType="text"
             android:hint="@string/name">
+            <requestFocus/>
         </EditText>
         <Button
             android:id="@+id/button1"
@@ -34,7 +33,7 @@
             android:layout_centerHorizontal="true"
             android:onClick="run"
             android:text="@string/save" />
-        <EditText
+        <!--<EditText
             android:id="@+id/editTextBirthday"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -44,17 +43,36 @@
             android:ems="10"
             android:inputType="text"
             android:hint="@string/birthday">
-        </EditText>
-
+        </EditText>-->
         <EditText
             android:id="@+id/editTextPhone"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/editTextBirthday"
             android:layout_below="@+id/editTextName"
             android:layout_marginBottom="15dp"
             android:ems="10"
             android:inputType="phone|text"
             android:hint="@string/phone"/>
+
+        <EditText
+            android:id="@+id/editTextDay"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTextPhone"
+            android:hint="DD"/>
+        <EditText
+            android:id="@+id/editTextMonth"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTextPhone"
+            android:layout_marginLeft="95dp"
+            android:hint="MM"/>
+        <EditText
+            android:id="@+id/editTextYear"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTextPhone"
+            android:layout_marginLeft="190dp"
+            android:hint="YYYY"/>
     </RelativeLayout>
 </ScrollView>
