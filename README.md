@@ -20,6 +20,6 @@
 <p>Forskjellige språk</p>
 <p>Bruk actionbar til endring av språk og en "om oss"</p>
 <p>Kosmetiske ting(Font, farger, spacing, skriftstørrelse, animasjoner, lyder)</p>
-
+<p>Prosjektene	skal	ha	navn	lik	studentnummeret_mappe2</p>
 <p>links:</p>
 <p>http://www.tutorialspoint.com/android/android_sqlite_database.htm</p>
