@@ -74,5 +74,12 @@
             android:layout_below="@id/editTextPhone"
             android:layout_marginLeft="190dp"
             android:hint="YYYY"/>
+        <TextView
+            android:id="@+id/errorMsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fyll inn alle felter"
+            android:layout_centerVertical="true"
+            android:textColor="@color/red"/>
     </RelativeLayout>
 </ScrollView>

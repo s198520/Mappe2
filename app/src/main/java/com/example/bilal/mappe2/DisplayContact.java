@@ -12,6 +12,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -28,6 +30,8 @@ public class DisplayContact extends Activity {
     TextView day;
     TextView year;
     TextView month;
+    TextView errorMsg;
+    Button button;
     int id_To_Update = 0;
 
     @Override
@@ -39,7 +43,16 @@ public class DisplayContact extends Activity {
         day = (TextView) findViewById (R.id.editTextDay);
         year = (TextView) findViewById (R.id.editTextYear);
         month = (TextView) findViewById (R.id.editTextMonth);
+        button = (Button) findViewById (R.id.button1);
 
+        name.addTextChangedListener(nameWatcher);
+        phone.addTextChangedListener(phoneWatcher);
+        day.addTextChangedListener(dayWatcher);
+        month.addTextChangedListener(monthWatcher);
+        year.addTextChangedListener(yearWatcher);
+
+        errorMsg = (TextView) findViewById(R.id.errorMsg);
+        button.setVisibility(View.GONE);
 
         mydb = new DBHelper(this);
 
@@ -203,5 +216,130 @@ public class DisplayContact extends Activity {
             }
         }
     }
+    private final TextWatcher nameWatcher = new TextWatcher() {
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            errorMsg.setText("Husk å legg til navn");
+        }
+
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+        }
+
+        public void afterTextChanged(Editable s) {
+            if (s.length() <= 0) {
+                errorMsg.setText("Add your name");
+                errorMsg.setVisibility(View.VISIBLE);
+                button.setVisibility(View.GONE);
+            } else{
+                errorMsg.setVisibility(View.GONE);
+                button.setVisibility(View.VISIBLE);
+            }
+        }
+    };
+
+    private final TextWatcher phoneWatcher = new TextWatcher() {
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            errorMsg.setText("Husk å legg til tlf");
+        }
+
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+        }
+
+        public void afterTextChanged(Editable s) {
+            if (s.length() <= 0) {
+                errorMsg.setText("Add your phone number");
+                errorMsg.setVisibility(View.VISIBLE);
+                button.setVisibility(View.GONE);
+            } else if(s.length() >8){
+                errorMsg.setText("No more than 8 numbers");
+                button.setVisibility(View.GONE);
+            } else {
+                errorMsg.setVisibility(View.GONE);
+                button.setVisibility(View.VISIBLE);
+            }
+        }
+    };
+
+    private final TextWatcher monthWatcher = new TextWatcher() {
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+        }
+
+        public void afterTextChanged(Editable s) {
+            if (s.length() <= 0) {
+                errorMsg.setText("Add a day");
+                errorMsg.setVisibility(View.VISIBLE);
+                button.setVisibility(View.GONE);
+            } else if(s.length() == 1){
+                errorMsg.setText("Add a '0' in front of your day ie:'01'");
+                button.setVisibility(View.GONE);
+            } else if(s.length() > 2){
+                errorMsg.setText("No more than 2 numbers in a day");
+                button.setVisibility(View.GONE);
+            } else {
+                errorMsg.setVisibility(View.GONE);
+                button.setVisibility(View.VISIBLE);
+            }
+        }
+    };
+
+    private final TextWatcher dayWatcher = new TextWatcher() {
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+        }
+
+        public void afterTextChanged(Editable s) {
+            if (s.length() <= 0) {
+                errorMsg.setText("Add a day");
+                errorMsg.setVisibility(View.VISIBLE);
+                button.setVisibility(View.GONE);
+            } else if(s.length() == 1){
+                errorMsg.setText("Add a '0' infront of your day ie:'01'");
+                button.setVisibility(View.GONE);
+            } else if(s.length() > 2){
+                errorMsg.setText("No more than 2 numbers in a day");
+                button.setVisibility(View.GONE);
+            } else {
+                errorMsg.setVisibility(View.GONE);
+                button.setVisibility(View.VISIBLE);
+            }
+        }
+    };
+
+    private final TextWatcher yearWatcher = new TextWatcher() {
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            errorMsg.setText("Husk å legg til year");
+        }
+
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+        }
+
+        public void afterTextChanged(Editable s) {
+            if (s.length() <= 0) {
+                errorMsg.setText("Add a day");
+                errorMsg.setVisibility(View.VISIBLE);
+                button.setVisibility(View.GONE);
+            } else if(s.length() < 4){
+                errorMsg.setText("Too old");
+                button.setVisibility(View.GONE);
+            } else if(s.length() > 4){
+                errorMsg.setText("Too young");
+                button.setVisibility(View.GONE);
+            } else {
+                errorMsg.setVisibility(View.GONE);
+                button.setVisibility(View.VISIBLE);
+            }
+        }
+    };
 
 }
