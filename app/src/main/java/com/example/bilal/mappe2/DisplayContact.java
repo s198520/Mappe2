@@ -25,16 +25,21 @@ public class DisplayContact extends Activity {
 
     TextView name ;
     TextView phone;
-    TextView birthday;
+    TextView day;
+    TextView year;
+    TextView month;
     int id_To_Update = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_contact);
-        name = (TextView) findViewById(R.id.editTextName);
-        phone = (TextView) findViewById(R.id.editTextPhone);
-        birthday = (TextView) findViewById(R.id.editTextBirthday);
+        name = (TextView) findViewById (R.id.editTextName);
+        phone = (TextView) findViewById (R.id.editTextPhone);
+        day = (TextView) findViewById (R.id.editTextDay);
+        year = (TextView) findViewById (R.id.editTextYear);
+        month = (TextView) findViewById (R.id.editTextMonth);
+
 
         mydb = new DBHelper(this);
 
@@ -51,7 +56,10 @@ public class DisplayContact extends Activity {
 
                 String nam = rs.getString(rs.getColumnIndex(DBHelper.CONTACTS_COLUMN_NAME));
                 String phon = rs.getString(rs.getColumnIndex(DBHelper.CONTACTS_COLUMN_PHONE));
-                String birthda = rs.getString(rs.getColumnIndex(DBHelper.CONTACTS_COLUMN_BIRTHDAY));
+                String da = rs.getString(rs.getColumnIndex(DBHelper.CONTACTS_COLUMN_DAY));
+                String yea = rs.getString(rs.getColumnIndex(DBHelper.CONTACTS_COLUMN_YEAR));
+                String mont = rs.getString(rs.getColumnIndex(DBHelper.CONTACTS_COLUMN_MONTH));
+
 
 
                 if (!rs.isClosed())
@@ -69,9 +77,18 @@ public class DisplayContact extends Activity {
                 phone.setFocusable(false);
                 phone.setClickable(false);
 
-                birthday.setText((CharSequence)birthda);
-                birthday.setFocusable(false);
-                birthday.setClickable(false);
+
+                day.setText((CharSequence)da);
+                day.setFocusable(false);
+                day.setClickable(false);
+
+                year.setText((CharSequence)yea);
+                year.setFocusable(false);
+                year.setClickable(false);
+
+                month.setText((CharSequence)mont);
+                month.setFocusable(false);
+                month.setClickable(false);
 
             }
         }
@@ -113,9 +130,19 @@ public class DisplayContact extends Activity {
                 phone.setFocusableInTouchMode(true);
                 phone.setClickable(true);
 
-                birthday.setEnabled(true);
-                birthday.setFocusableInTouchMode(true);
-                birthday.setClickable(true);
+
+
+                day.setEnabled(true);
+                day.setFocusableInTouchMode(true);
+                day.setClickable(true);
+
+                year.setEnabled(true);
+                year.setFocusableInTouchMode(true);
+                year.setClickable(true);
+
+                month.setEnabled(true);
+                month.setFocusableInTouchMode(true);
+                month.setClickable(true);
 
 
                 return true;
@@ -154,7 +181,7 @@ public class DisplayContact extends Activity {
         {
             int Value = extras.getInt("id");
             if(Value>0){
-                if(mydb.updateContact(id_To_Update,name.getText().toString(), phone.getText().toString(), birthday.getText().toString())){
+                if(mydb.updateContact(id_To_Update,name.getText().toString(), phone.getText().toString(), day.getText().toString(), year.getText().toString(), month.getText().toString() )){
                     Toast.makeText(getApplicationContext(), "Updated", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getApplicationContext(),MainActivity.class);
                     startActivity(intent);
@@ -164,7 +191,7 @@ public class DisplayContact extends Activity {
                 }
             }
             else{
-                if(mydb.insertContact(name.getText().toString(), phone.getText().toString(), birthday.getText().toString())){
+                if(mydb.insertContact(name.getText().toString(), phone.getText().toString(), day.getText().toString(), year.getText().toString(), month.getText().toString())){
                     Toast.makeText(getApplicationContext(), "done", Toast.LENGTH_SHORT).show();
                 }
 

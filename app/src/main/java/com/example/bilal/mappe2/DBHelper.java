@@ -4,7 +4,6 @@ package com.example.bilal.mappe2;
  * Created by bilal on 10/16/2015.
  */
 
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Hashtable;
@@ -21,8 +20,11 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String CONTACTS_TABLE_NAME = "contacts";
     public static final String CONTACTS_COLUMN_ID = "id";
     public static final String CONTACTS_COLUMN_NAME = "name";
-    public static final String CONTACTS_COLUMN_BIRTHDAY = "birthday";
     public static final String CONTACTS_COLUMN_PHONE = "phone";
+    public static final String CONTACTS_COLUMN_DAY = "day";
+    public static final String CONTACTS_COLUMN_YEAR = "year";
+    public static final String CONTACTS_COLUMN_MONTH = "month";
+
     private HashMap hp;
 
     public DBHelper(Context context)
@@ -35,7 +37,7 @@ public class DBHelper extends SQLiteOpenHelper {
         // TODO Auto-generated method stub
         db.execSQL(
                 "create table contacts " +
-                        "(id integer primary key, name text,phone text,birthday text)"
+                        "(id integer primary key, name text,phone text,day text,year text,month text)"
         );
     }
 
@@ -46,13 +48,16 @@ public class DBHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean insertContact  (String name, String phone, String birthday)
+    public boolean insertContact  (String name, String phone, String day, String year, String month)
     {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("name", name);
         contentValues.put("phone", phone);
-        contentValues.put("birthday", birthday);
+        contentValues.put("day", day);
+        contentValues.put("year", year);
+        contentValues.put("month", month);
+
         db.insert("contacts", null, contentValues);
         return true;
     }
@@ -69,13 +74,16 @@ public class DBHelper extends SQLiteOpenHelper {
         return numRows;
     }
 
-    public boolean updateContact (Integer id, String name, String phone, String birthday)
+    public boolean updateContact (Integer id, String name, String phone, String day, String year, String month)
     {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("name", name);
         contentValues.put("phone", phone);
-        contentValues.put("birthday", birthday);
+        contentValues.put("day", day);
+        contentValues.put("year", year);
+        contentValues.put("month", month);
+
         db.update("contacts", contentValues, "id = ? ", new String[] { Integer.toString(id) } );
         return true;
     }
