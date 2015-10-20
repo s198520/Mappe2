@@ -1,5 +1,4 @@
 <h1>SLETT MEG!!</h1>
-C:\Users\Bilal\AppData\Local\GitHub\PortableGit_c2ba306e536fdf878271f7fe636a147ff37326ad\bin\git.exe
 
 <p>Send mail til Torunn ASAP</p>
 
