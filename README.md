@@ -21,6 +21,9 @@
 <p>Bruk actionbar til endring av språk og en "om oss"</p>
 <p>Kosmetiske ting(Font, farger, spacing, skriftstørrelse, animasjoner, lyder)</p>
 <p>Prosjektene	skal	ha	navn	lik	studentnummeret_mappe2</p>
+<p>Actionbar overalt</p>
+<p>Iconer i stedet for menyer</p>
+<p>Mer lesbart på forsiden</p>
 <p>links:</p>
 
 
