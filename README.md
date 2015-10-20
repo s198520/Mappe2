@@ -22,10 +22,11 @@
 <p>Kosmetiske ting(Font, farger, spacing, skriftstørrelse, animasjoner, lyder)</p>
 <p>Prosjektene	skal	ha	navn	lik	studentnummeret_mappe2</p>
 <p>links:</p>
-<p>http://www.tutorialspoint.com/android/android_sqlite_database.htm</p>
+
 
 <p>Spørsmål til Tirsdag:</p>
 <p>Listview henter feil info</p>
 <p>Date greia ok?</p>
 <p>Greit å bruke actionbar?</p>
 <p>Sletting bugger systemet</p>
+<p>ErrorMsg fungerer ikke ordentlig</p>
