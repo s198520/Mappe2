@@ -32,20 +32,18 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="28dp"
-            android:layout_centerHorizontal="true"
             android:onClick="run"
-            android:text="@string/save" />
-        <!--<EditText
-            android:id="@+id/editTextBirthday"
-            android:layout_width="fill_parent"
+            android:text="@string/save"
+            android:textColor="@color/textColor"
+            android:background="@color/bColor"/>
+        <Button
+            android:id="@+id/backBtn"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/editTextName"
-            android:layout_below="@+id/editTextPhone"
-            android:layout_marginBottom="15dp"
-            android:ems="10"
-            android:inputType="text"
-            android:hint="@string/birthday">
-        </EditText>-->
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="200dp"
+            android:background="@drawable/buttonshape"/>
+
         <EditText
             android:id="@+id/editTextPhone"
             android:layout_width="fill_parent"
