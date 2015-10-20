@@ -5,8 +5,6 @@ package com.example.bilal.mappe2;
  */
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Hashtable;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -18,14 +16,11 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "oblig2.db";
     public static final String CONTACTS_TABLE_NAME = "contacts";
-    public static final String CONTACTS_COLUMN_ID = "id";
     public static final String CONTACTS_COLUMN_NAME = "name";
     public static final String CONTACTS_COLUMN_PHONE = "phone";
     public static final String CONTACTS_COLUMN_DAY = "day";
     public static final String CONTACTS_COLUMN_YEAR = "year";
     public static final String CONTACTS_COLUMN_MONTH = "month";
-
-    private HashMap hp;
 
     public DBHelper(Context context)
     {
@@ -34,7 +29,6 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        // TODO Auto-generated method stub
         db.execSQL(
                 "create table contacts " +
                         "(id integer primary key, name text,phone text,day text,year text,month text)"
@@ -43,7 +37,6 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        // TODO Auto-generated method stub
         db.execSQL("DROP TABLE IF EXISTS contacts");
         onCreate(db);
     }
@@ -100,7 +93,6 @@ public class DBHelper extends SQLiteOpenHelper {
     {
         ArrayList<String> array_list = new ArrayList<String>();
 
-        //hp = new HashMap();
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor res =  db.rawQuery( "select * from contacts", null );
         res.moveToFirst();

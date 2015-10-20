@@ -73,8 +73,6 @@ public class DisplayContact extends Activity {
                 String yea = rs.getString(rs.getColumnIndex(DBHelper.CONTACTS_COLUMN_YEAR));
                 String mont = rs.getString(rs.getColumnIndex(DBHelper.CONTACTS_COLUMN_MONTH));
 
-
-
                 if (!rs.isClosed())
                 {
                     rs.close();
@@ -90,7 +88,6 @@ public class DisplayContact extends Activity {
                 phone.setFocusable(false);
                 phone.setClickable(false);
 
-
                 day.setText((CharSequence)da);
                 day.setFocusable(false);
                 day.setClickable(false);
@@ -102,7 +99,6 @@ public class DisplayContact extends Activity {
                 month.setText((CharSequence)mont);
                 month.setFocusable(false);
                 month.setClickable(false);
-
             }
         }
     }
@@ -143,8 +139,6 @@ public class DisplayContact extends Activity {
                 phone.setFocusableInTouchMode(true);
                 phone.setClickable(true);
 
-
-
                 day.setEnabled(true);
                 day.setFocusableInTouchMode(true);
                 day.setClickable(true);
@@ -156,7 +150,6 @@ public class DisplayContact extends Activity {
                 month.setEnabled(true);
                 month.setFocusableInTouchMode(true);
                 month.setClickable(true);
-
 
                 return true;
             case R.id.Delete_Contact:

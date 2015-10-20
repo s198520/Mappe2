@@ -17,7 +17,6 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 public class MainActivity extends ActionBarActivity {
-    public final static String EXTRA_MESSAGE = "MESSAGE";
     private ListView obj;
     DBHelper mydb;
 
@@ -35,7 +34,6 @@ public class MainActivity extends ActionBarActivity {
         obj.setOnItemClickListener(new OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,long arg3) {
-                // TODO Auto-generated method stub
                 int id_To_Search = arg2 + 1;
 
                 Bundle dataBundle = new Bundle();
