@@ -16,6 +16,6 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="birthday">Birthday</string>
-    <string name="header1">Birthdays</string>
+    <string name="header1">Contact list</string>
     <string name="header2">Register</string>
 </resources>
