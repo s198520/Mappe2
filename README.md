@@ -1,4 +1,6 @@
 <h1>SLETT MEG!!</h1>
+C:\Windows\Program Files(x86)\Git\bin\git.exe
+
 
 <p>Send mail til Torunn ASAP</p>
 
