@@ -21,7 +21,9 @@
             android:layout_marginBottom="15dp"
             android:ems="10"
             android:inputType="text"
-            android:hint="@string/name">
+            android:hint="@string/name"
+            android:maxLength="20"
+            >
             <requestFocus/>
         </EditText>
         <Button
@@ -52,28 +54,39 @@
             android:layout_marginBottom="15dp"
             android:ems="10"
             android:inputType="phone|text"
-            android:hint="@string/phone"/>
+            android:hint="@string/phone"
+            android:maxLength="8"
+            />
 
         <EditText
             android:id="@+id/editTextDay"
             android:layout_width="75dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/editTextPhone"
-            android:hint="DD"/>
+            android:hint="DD"
+            android:maxLength="2"
+            android:inputType="phone|text"
+            />
         <EditText
             android:id="@+id/editTextMonth"
             android:layout_width="75dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/editTextPhone"
             android:layout_marginLeft="95dp"
-            android:hint="MM"/>
+            android:hint="MM"
+            android:maxLength="2"
+            android:inputType="phone|text"
+            />
         <EditText
             android:id="@+id/editTextYear"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/editTextPhone"
             android:layout_marginLeft="190dp"
-            android:hint="YYYY"/>
+            android:hint="YYYY"
+            android:maxLength="4"
+            android:inputType="phone|text"
+            />
         <TextView
             android:id="@+id/errorMsg"
             android:layout_width="wrap_content"
