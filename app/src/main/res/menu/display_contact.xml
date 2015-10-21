@@ -1,18 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:Mappe2="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <item
         android:id="@+id/Edit_Contact"
+        android:icon="@drawable/ic_action_edit"
         android:layout_width="match_parent"
         android:layout_height="370dp"
         android:orderInCategory="100"
-        android:title="@string/edit"/>
+        android:title="@string/edit"
+        Mappe2:showAsAction="always"/>
 
     <item
         android:id="@+id/Delete_Contact"
+        android:icon="@drawable/ic_action_remove"
         android:orderInCategory="100"
         android:title="@string/delete"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        Mappe2:showAsAction="always"/>
 
 </menu>

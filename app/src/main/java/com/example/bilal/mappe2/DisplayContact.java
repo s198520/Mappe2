@@ -13,9 +13,11 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 
+import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -24,7 +26,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class DisplayContact extends Activity {
+public class DisplayContact extends AppCompatActivity {
     private DBHelper mydb ;
 
     TextView name ;
@@ -40,6 +42,7 @@ public class DisplayContact extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_contact);
+
         name = (TextView) findViewById (R.id.editTextName);
         phone = (TextView) findViewById (R.id.editTextPhone);
         day = (TextView) findViewById (R.id.editTextDay);
@@ -81,6 +84,7 @@ public class DisplayContact extends Activity {
                 }
                 ImageView b = (ImageView)findViewById(R.id.button1);
                 b.setVisibility(View.INVISIBLE);
+                button.setVisibility(View.GONE);
 
                 name.setText((CharSequence)nam);
                 name.setFocusable(false);
@@ -114,11 +118,17 @@ public class DisplayContact extends Activity {
         {
             int Value = extras.getInt("id");
             if(Value>0){
-                getMenuInflater().inflate(R.menu.display_contact, menu);
+                MenuInflater inflater = getMenuInflater();
+                inflater.inflate(R.menu.display_contact, menu);
+
+                return super.onCreateOptionsMenu(menu);
             }
 
             else{
-                getMenuInflater().inflate(R.menu.menu_main, menu);
+                MenuInflater inflater = getMenuInflater();
+                inflater.inflate(R.menu.menu_main, menu);
+
+                return super.onCreateOptionsMenu(menu);
             }
         }
         return true;
@@ -337,4 +347,7 @@ public class DisplayContact extends Activity {
         }
     };
 
+    public void back(View view){
+            DisplayContact.this.finish();
+    }
 }

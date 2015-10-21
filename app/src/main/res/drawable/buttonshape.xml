@@ -4,11 +4,11 @@
             android:radius="100dp"
             />
         <solid
-            android:color="#B5B9F6"
+            android:color="@color/btnColor"
             />
         <size
             android:width="270dp"
-            android:height="60dp"
+            android:height="90dp"
             />
 
     </shape>

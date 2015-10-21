@@ -2,8 +2,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:Mappe2="http://schemas.android.com/apk/res-auto">
 
-    <!-- Search / will display always -->
-    <item android:id="@+id/item1"
+    <item
+        android:id="@+id/item1"
         android:icon="@drawable/ic_action_add_group"
         android:title="1"
         Mappe2:showAsAction="always"

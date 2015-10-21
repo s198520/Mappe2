@@ -4,11 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DisplayContact"
-    android:background="@drawable/backgroundthing">
+    android:background="@color/bColor">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="370dp"
+        android:layout_height="450dp"
         android:paddingBottom="@dimen/activity_vertical_margin"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
@@ -20,7 +20,7 @@
             android:text="@string/header1"
             android:paddingLeft="50dp"
             android:textSize="35dp"
-            android:textColor="@color/black"/>
+            android:textColor="@color/textColor"/>
         <View
             android:id="@+id/hr2"
             android:layout_width="fill_parent"
@@ -38,26 +38,10 @@
             android:inputType="text"
             android:hint="@string/name"
             android:maxLength="20"
-            android:layout_below="@+id/hr2">
+            android:layout_below="@+id/hr2"
+            android:textColor="@color/tColor">
             <requestFocus/>
         </EditText>
-        <!--<Button
-            android:id="@+id/button1"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="28dp"
-            android:onClick="run"
-            android:text="@string/save"
-            android:background="@drawable/buttonshape"/>
-        <Button
-            android:id="@+id/backBtn"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginLeft="200dp"
-            android:background="@drawable/buttonshape"
-            android:text="Back"/>-->
         <ImageView
             android:id="@+id/backBtn"
             android:layout_alignParentBottom="true"
@@ -65,7 +49,9 @@
             android:layout_height="50dp"
             android:src="@drawable/ic_action_back"
             android:layout_below="@+id/errorMsg"
-            android:onClick="back"/>
+            android:onClick="back"
+            android:background="@drawable/buttonshape"
+            android:textColor="@color/tColor"/>
 
         <ImageView
             android:id="@+id/button1"
@@ -75,7 +61,9 @@
             android:src="@drawable/ic_action_save"
             android:layout_below="@+id/errorMsg"
             android:layout_marginLeft="200dp"
-            android:onClick="run"/>
+            android:onClick="run"
+            android:background="@drawable/buttonshape"
+            android:textColor="@color/tColor"/>
 
         <EditText
             android:id="@+id/editTextPhone"
@@ -87,6 +75,7 @@
             android:inputType="phone|text"
             android:hint="@string/phone"
             android:maxLength="8"
+            android:textColor="@color/tColor"
             />
 
         <EditText
@@ -97,6 +86,7 @@
             android:hint="DD"
             android:maxLength="2"
             android:inputType="phone|text"
+            android:textColor="@color/tColor"
             />
         <EditText
             android:id="@+id/editTextMonth"
@@ -107,6 +97,7 @@
             android:hint="MM"
             android:maxLength="2"
             android:inputType="phone|text"
+            android:textColor="@color/tColor"
             />
         <EditText
             android:id="@+id/editTextYear"
@@ -117,6 +108,7 @@
             android:hint="YYYY"
             android:maxLength="4"
             android:inputType="phone|text"
+            android:textColor="@color/tColor"
             />
         <TextView
             android:id="@+id/errorMsg"
@@ -124,6 +116,8 @@
             android:layout_height="wrap_content"
             android:text="Fyll inn alle felter"
             android:layout_below="@+id/editTextMonth"
-            android:textColor="@color/red"/>
+            android:textColor="@color/red"
+            android:textAllCaps="true"
+            android:textStyle="bold"/>
     </RelativeLayout>
 </ScrollView>

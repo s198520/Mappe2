@@ -5,6 +5,8 @@
     <color name="black">#000000</color>
     <color name="white">#ffffff</color>
     <color name="red">#ff0000</color>
-    <color name="textColor">#82462F</color>
-    <color name="bColor">#B5B9F6</color>
+    <color name="textColor">#1B1A59</color>
+    <color name="bColor">#75B095</color>
+    <color name="tColor">#565595</color>
+    <color name="btnColor">#ACCFC0</color>
 </resources>
