@@ -20,6 +20,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,7 +33,7 @@ public class DisplayContact extends Activity {
     TextView year;
     TextView month;
     TextView errorMsg;
-    Button button;
+    ImageView button;
     int id_To_Update = 0;
 
     @Override
@@ -44,7 +45,7 @@ public class DisplayContact extends Activity {
         day = (TextView) findViewById (R.id.editTextDay);
         year = (TextView) findViewById (R.id.editTextYear);
         month = (TextView) findViewById (R.id.editTextMonth);
-        button = (Button) findViewById (R.id.button1);
+        button = (ImageView) findViewById (R.id.button1);
 
         name.addTextChangedListener(nameWatcher);
         phone.addTextChangedListener(phoneWatcher);
@@ -78,7 +79,7 @@ public class DisplayContact extends Activity {
                 {
                     rs.close();
                 }
-                Button b = (Button)findViewById(R.id.button1);
+                ImageView b = (ImageView)findViewById(R.id.button1);
                 b.setVisibility(View.INVISIBLE);
 
                 name.setText((CharSequence)nam);
@@ -129,7 +130,7 @@ public class DisplayContact extends Activity {
         switch(item.getItemId())
         {
             case R.id.Edit_Contact:
-                Button b = (Button)findViewById(R.id.button1);
+                ImageView b = (ImageView)findViewById(R.id.button1);
                 b.setVisibility(View.VISIBLE);
 
                 name.setEnabled(true);

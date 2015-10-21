@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DisplayContact"
-    android:background="@color/gray">
+    android:background="@drawable/backgroundthing">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -41,7 +41,7 @@
             android:layout_below="@+id/hr2">
             <requestFocus/>
         </EditText>
-        <Button
+        <!--<Button
             android:id="@+id/button1"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
@@ -57,7 +57,25 @@
             android:layout_alignParentBottom="true"
             android:layout_marginLeft="200dp"
             android:background="@drawable/buttonshape"
-            android:text="Back"/>
+            android:text="Back"/>-->
+        <ImageView
+            android:id="@+id/backBtn"
+            android:layout_alignParentBottom="true"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_action_back"
+            android:layout_below="@+id/errorMsg"
+            android:onClick="back"/>
+
+        <ImageView
+            android:id="@+id/button1"
+            android:layout_alignParentBottom="true"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_action_save"
+            android:layout_below="@+id/errorMsg"
+            android:layout_marginLeft="200dp"
+            android:onClick="run"/>
 
         <EditText
             android:id="@+id/editTextPhone"
