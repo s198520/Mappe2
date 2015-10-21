@@ -35,11 +35,12 @@
             android:layout_marginTop="30dp"
             android:layout_marginBottom="15dp"
             android:ems="10"
-            android:inputType="text"
+            android:inputType="textPersonName"
             android:hint="@string/name"
             android:maxLength="20"
             android:layout_below="@+id/hr2"
-            android:textColor="@color/tColor">
+            android:textColor="@color/tColor"
+            android:digits="@string/alphabet">
             <requestFocus/>
         </EditText>
         <ImageView
@@ -51,7 +52,8 @@
             android:layout_below="@+id/errorMsg"
             android:onClick="back"
             android:background="@drawable/buttonshape"
-            android:textColor="@color/tColor"/>
+            android:textColor="@color/tColor"
+            android:layout_alignParentLeft="true"/>
 
         <ImageView
             android:id="@+id/button1"
@@ -60,10 +62,10 @@
             android:layout_height="50dp"
             android:src="@drawable/ic_action_save"
             android:layout_below="@+id/errorMsg"
-            android:layout_marginLeft="200dp"
             android:onClick="run"
             android:background="@drawable/buttonshape"
-            android:textColor="@color/tColor"/>
+            android:textColor="@color/tColor"
+            android:layout_alignParentRight="true"/>
 
         <EditText
             android:id="@+id/editTextPhone"
@@ -118,6 +120,7 @@
             android:layout_below="@+id/editTextMonth"
             android:textColor="@color/red"
             android:textAllCaps="true"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:paddingTop="10dp"/>
     </RelativeLayout>
 </ScrollView>

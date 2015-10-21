@@ -223,7 +223,7 @@ public class DisplayContact extends AppCompatActivity {
     }
     private final TextWatcher nameWatcher = new TextWatcher() {
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            errorMsg.setText("Husk å legg til navn");
+            errorMsg.setText("Remember to fill in all fields");
         }
 
         public void onTextChanged(CharSequence s, int start, int before, int count) {
@@ -244,7 +244,7 @@ public class DisplayContact extends AppCompatActivity {
 
     private final TextWatcher phoneWatcher = new TextWatcher() {
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            errorMsg.setText("Husk å legg til tlf");
+            errorMsg.setText("Add your phone number");
         }
 
         public void onTextChanged(CharSequence s, int start, int before, int count) {
@@ -252,12 +252,9 @@ public class DisplayContact extends AppCompatActivity {
         }
 
         public void afterTextChanged(Editable s) {
-            if (s.length() <= 0) {
-                errorMsg.setText("Add your phone number");
+            if (s.length() < 8) {
+                errorMsg.setText("A phone number contains 8 digits");
                 errorMsg.setVisibility(View.VISIBLE);
-                button.setVisibility(View.GONE);
-            } else if(s.length() >8){
-                errorMsg.setText("No more than 8 numbers");
                 button.setVisibility(View.GONE);
             } else {
                 errorMsg.setVisibility(View.GONE);
@@ -322,7 +319,7 @@ public class DisplayContact extends AppCompatActivity {
 
     private final TextWatcher yearWatcher = new TextWatcher() {
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            errorMsg.setText("Husk å legg til year");
+
         }
 
         public void onTextChanged(CharSequence s, int start, int before, int count) {
@@ -344,6 +341,8 @@ public class DisplayContact extends AppCompatActivity {
                 errorMsg.setVisibility(View.GONE);
                 button.setVisibility(View.VISIBLE);
             }
+
+
         }
     };
 

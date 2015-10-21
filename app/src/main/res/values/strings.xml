@@ -18,4 +18,5 @@
     <string name="birthday">Birthday</string>
     <string name="header1">Contact list</string>
     <string name="header2">Register</string>
+    <string name="alphabet">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
 </resources>
