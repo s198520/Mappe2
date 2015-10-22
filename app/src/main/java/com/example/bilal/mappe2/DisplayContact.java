@@ -5,6 +5,8 @@ package com.example.bilal.mappe2;
  */
 
 import android.app.ActionBar;
+import android.content.Context;
+import android.media.AudioManager;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -19,6 +21,7 @@ import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.SoundEffectConstants;
 import android.view.View;
 
 import android.widget.Button;
@@ -118,6 +121,8 @@ public class DisplayContact extends AppCompatActivity {
         {
             int Value = extras.getInt("id");
             if(Value>0){
+                ImageView b = (ImageView)findViewById(R.id.button1);
+                b.setVisibility(View.GONE);
                 MenuInflater inflater = getMenuInflater();
                 inflater.inflate(R.menu.display_contact, menu);
 
@@ -125,8 +130,10 @@ public class DisplayContact extends AppCompatActivity {
             }
 
             else{
+                ImageView b = (ImageView)findViewById(R.id.button1);
+                b.setVisibility(View.GONE);
                 MenuInflater inflater = getMenuInflater();
-                inflater.inflate(R.menu.menu_main, menu);
+                inflater.inflate(R.menu.contact2, menu);
 
                 return super.onCreateOptionsMenu(menu);
             }
@@ -141,7 +148,7 @@ public class DisplayContact extends AppCompatActivity {
         {
             case R.id.Edit_Contact:
                 ImageView b = (ImageView)findViewById(R.id.button1);
-                b.setVisibility(View.VISIBLE);
+                b.setVisibility(View.GONE);
 
                 name.setEnabled(true);
                 name.setFocusableInTouchMode(true);
@@ -345,8 +352,10 @@ public class DisplayContact extends AppCompatActivity {
 
         }
     };
-
-    public void back(View view){
-            DisplayContact.this.finish();
+    public void back(View view) {
+        DisplayContact.this.finish();
+        AudioManager audioManager = (AudioManager) this.getSystemService(Context.AUDIO_SERVICE);
+            //view.playSoundEffect(android.view.SoundEffectConstants.CLICK);
+        audioManager.playSoundEffect(SoundEffectConstants.CLICK);
     }
 }

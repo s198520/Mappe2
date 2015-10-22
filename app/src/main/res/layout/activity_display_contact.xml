@@ -53,7 +53,7 @@
             android:onClick="back"
             android:background="@drawable/buttonshape"
             android:textColor="@color/tColor"
-            android:layout_alignParentLeft="true"/>
+            android:layout_alignParentLeft="true" />
 
         <ImageView
             android:id="@+id/button1"
