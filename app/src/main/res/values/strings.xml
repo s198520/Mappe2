@@ -1,22 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Mappe 2</string>
+    /*Må være med, app data*/
+    <string name="app_name">Contact List</string>
     <string name="action_settings">Settings</string>
+
+    /*er de her i bruk???*/
     <string name="Add_New">Add New</string>
     <string name="edit">Edit Contact</string>
     <string name="delete">Delete Contact</string>
     <string name="title_activity_display_contact">DisplayContact</string>
+    <string name="save">Save Contact</string>
+    <string name="birthday">Birthday</string>
+
+    /*activity_main*/
+    <string name="header1">Contact List</string>
+    <string name="error">Fill In All The Information</string>
+
+    /*activity_display_contact*/
+    <string name="header">New Contact</string>
     <string name="name">Name</string>
     <string name="phone">Phone</string>
-    <string name="email">Email</string>
-    <string name="street">Street</string>
-    <string name="country">City/State/Zip</string>
-    <string name="save">Save Contact</string>
-    <string name="deleteContact">Are you sure, you want to delete it.</string>
+    <string name="mm">MM</string>
+    <string name="dd">DD</string>
+    <string name="yy">YY</string>
+    <string name="deleteContact">Are You Sure You Want To Delete This Contact?</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
-    <string name="birthday">Birthday</string>
-    <string name="header1">Contact list</string>
-    <string name="header2">Register</string>
     <string name="alphabet">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+
 </resources>

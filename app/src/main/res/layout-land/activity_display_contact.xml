@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     tools:context=".DisplayContact"
     android:background="@color/bColor">
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="450dp"
@@ -15,91 +14,88 @@
         android:paddingTop="@dimen/activity_vertical_margin">
         <TextView
             android:id="@+id/headers"
+            android:textStyle="bold"
+            android:textColor="@color/tColor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/header1"
+            android:text="@string/header"
             android:paddingLeft="50dp"
-            android:textSize="35dp"
-            android:textColor="@color/textColor"/>
+            android:textSize="20dp"
+            />
         <View
             android:id="@+id/hr2"
             android:layout_width="fill_parent"
             android:layout_height="1dip"
-            android:background="#000000"
+            android:background="@color/black"
             android:layout_below="@+id/headers"/>
 
         <EditText
             android:id="@+id/editTextName"
-            android:layout_width="fill_parent"
+            android:textStyle="bold"
+            android:layout_width="290dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="3dp"
             android:ems="10"
-            android:inputType="textPersonName"
+            android:inputType="text"
             android:hint="@string/name"
             android:maxLength="20"
-            android:layout_below="@+id/hr2"
-            android:textColor="@color/tColor"
-            android:digits="@string/alphabet">
+            android:layout_below="@+id/hr2">
             <requestFocus/>
         </EditText>
         <ImageView
             android:id="@+id/backBtn"
-            android:layout_alignParentBottom="true"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/ic_action_back"
-            android:layout_below="@+id/errorMsg"
             android:onClick="back"
-            android:background="@drawable/buttonshape"
-            android:textColor="@color/tColor"
-            android:layout_alignParentLeft="true" />
+            android:layout_toRightOf="@+id/editTextName"
+            android:layout_margin="5dp"
+            android:layout_below="@+id/hr2"
+            android:background="@drawable/buttonshape" />
 
         <ImageView
             android:id="@+id/button1"
-            android:layout_alignParentBottom="true"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:layout_margin="5dp"
             android:src="@drawable/ic_action_save"
-            android:layout_below="@+id/errorMsg"
+            android:layout_below="@+id/backBtn"
+            android:layout_toRightOf="@id/editTextYear"
             android:onClick="run"
             android:background="@drawable/buttonshape"
-            android:textColor="@color/tColor"
-            android:layout_alignParentRight="true"/>
+            />
 
         <EditText
             android:id="@+id/editTextPhone"
-            android:layout_width="fill_parent"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/editTextName"
-            android:layout_marginBottom="15dp"
-            android:ems="10"
+            android:textStyle="bold"
             android:inputType="phone|text"
             android:hint="@string/phone"
-            android:maxLength="8"
-            android:textColor="@color/tColor"
-            />
+            android:maxLength="8" />
 
         <EditText
             android:id="@+id/editTextDay"
             android:layout_width="75dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/editTextPhone"
-            android:hint="DD"
+            android:textStyle="bold"
+            android:hint="@string/dd"
             android:maxLength="2"
             android:inputType="phone|text"
-            android:textColor="@color/tColor"
             />
         <EditText
             android:id="@+id/editTextMonth"
             android:layout_width="75dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/editTextPhone"
+            android:textStyle="bold"
             android:layout_marginLeft="95dp"
-            android:hint="MM"
+            android:hint="@string/mm"
             android:maxLength="2"
             android:inputType="phone|text"
-            android:textColor="@color/tColor"
+
             />
         <EditText
             android:id="@+id/editTextYear"
@@ -107,20 +103,22 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/editTextPhone"
             android:layout_marginLeft="190dp"
-            android:hint="YYYY"
+            android:hint="@string/yy"
+            android:textStyle="bold"
             android:maxLength="4"
             android:inputType="phone|text"
-            android:textColor="@color/tColor"
+
             />
         <TextView
             android:id="@+id/errorMsg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/error"
+            android:text="Fyll inn alle felter"
             android:layout_below="@+id/editTextMonth"
             android:textColor="@color/red"
+            android:layout_marginTop="5dp"
+            android:textSize="15dp"
             android:textAllCaps="true"
-            android:textStyle="bold"
-            android:paddingTop="10dp"/>
+            android:textStyle="bold"/>
     </RelativeLayout>
 </ScrollView>

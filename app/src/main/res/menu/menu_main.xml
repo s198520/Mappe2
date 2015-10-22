@@ -8,4 +8,16 @@
         android:title="1"
         Mappe2:showAsAction="always"
         android:orderInCategory="0"/>
+    <item
+        android:id="@+id/eng"
+        android:icon="@drawable/english"
+        android:title="1"
+        Mappe2:showAsAction="always"
+        android:orderInCategory="0"/>
+    <item
+        android:id="@+id/nb"
+        android:icon="@drawable/norge"
+        android:title="1"
+        Mappe2:showAsAction="always"
+        android:orderInCategory="0"/>
 </menu>

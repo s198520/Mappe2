@@ -4,19 +4,22 @@ import android.app.ActionBar;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-
+import java.util.Locale;
+import android.app.Activity;
+import android.content.res.Configuration;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
-
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -64,20 +67,49 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){
         super.onOptionsItemSelected(item);
 
-        switch(item.getItemId())
-        {
-            case R.id.item1:Bundle dataBundle = new Bundle();
+        switch(item.getItemId()) {
+            case R.id.item1:
+                Bundle dataBundle = new Bundle();
                 dataBundle.putInt("id", 0);
 
-                Intent intent = new Intent(getApplicationContext(),DisplayContact.class);
+                Intent intent = new Intent(getApplicationContext(), DisplayContact.class);
                 intent.putExtras(dataBundle);
 
                 startActivity(intent);
-                return true;
+                break;
+
+            /**
+             * Endre språk (fra Engelsk til Norsk <->).
+             */
+
+            case R.id.eng:
+                String languageToLoad = "en"; // your language
+                Locale locale = new Locale(languageToLoad);
+                Locale.setDefault(locale);
+                Configuration config = new Configuration();
+                config.locale = locale;
+                getBaseContext().getResources().updateConfiguration(config,
+                        getBaseContext().getResources().getDisplayMetrics());
+                this.setContentView(R.layout.activity_main);
+
+                break;
+            case R.id.nb:
+                languageToLoad = "nb"; // your language
+                locale = new Locale(languageToLoad);
+                Locale.setDefault(locale);
+                config = new Configuration();
+                config.locale = locale;
+                getBaseContext().getResources().updateConfiguration(config,
+                        getBaseContext().getResources().getDisplayMetrics());
+                this.setContentView(R.layout.activity_main);
+                break;
+
             default:
-                return super.onOptionsItemSelected(item);
+                break;
         }
+        return super.onOptionsItemSelected(item);
     }
+
 
     public boolean onKeyDown(int keycode, KeyEvent event) {
         if (keycode == KeyEvent.KEYCODE_BACK) {
