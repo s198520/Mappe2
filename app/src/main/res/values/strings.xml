@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     /*Må være med, app data*/
-    <string name="app_name">Contact List</string>
+    <string name="app_name">Birthday List</string>
     <string name="action_settings">Settings</string>
 
     /*er de her i bruk???*/
