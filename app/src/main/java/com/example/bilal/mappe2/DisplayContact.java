@@ -201,6 +201,7 @@ public class DisplayContact extends AppCompatActivity {
 
     public void run(View view)
     {
+        view.setBackgroundResource(R.drawable.buttonshape_down);
         Bundle extras = getIntent().getExtras();
         if(extras !=null)
         {
@@ -348,14 +349,11 @@ public class DisplayContact extends AppCompatActivity {
                 errorMsg.setVisibility(View.GONE);
                 button.setVisibility(View.VISIBLE);
             }
-
-
         }
     };
+
     public void back(View view) {
         DisplayContact.this.finish();
-        AudioManager audioManager = (AudioManager) this.getSystemService(Context.AUDIO_SERVICE);
-            //view.playSoundEffect(android.view.SoundEffectConstants.CLICK);
-        audioManager.playSoundEffect(SoundEffectConstants.CLICK);
+        view.setBackgroundResource(R.drawable.buttonshape_down);
     }
 }
